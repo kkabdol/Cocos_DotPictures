@@ -202,6 +202,9 @@
 		2589088E1691694B003998BD /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2589088D1691694B003998BD /* HttpClient.cpp */; };
 		258908971691694B003998BD /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 258908961691694B003998BD /* AppDelegate.cpp */; };
 		2589089A1691694B003998BD /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 258908991691694B003998BD /* HelloWorldScene.cpp */; };
+		258908AD16916E37003998BD /* Dot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 258908AC16916E37003998BD /* Dot.cpp */; };
+		258908B016916E67003998BD /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 258908AF16916E67003998BD /* GameScene.cpp */; };
+		258908BA1691834B003998BD /* white_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 258908B91691834B003998BD /* white_circle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -634,6 +637,11 @@
 		258908961691694B003998BD /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		258908981691694B003998BD /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		258908991691694B003998BD /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		258908AB16916E2A003998BD /* Dot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dot.h; path = Classes/Dot.h; sourceTree = "<group>"; };
+		258908AC16916E37003998BD /* Dot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Dot.cpp; path = Classes/Dot.cpp; sourceTree = "<group>"; };
+		258908AE16916E67003998BD /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
+		258908AF16916E67003998BD /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = Classes/GameScene.cpp; sourceTree = "<group>"; };
+		258908B91691834B003998BD /* white_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_circle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -703,6 +711,7 @@
 		2589060916916946003998BD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				258908B91691834B003998BD /* white_circle.png */,
 				2589060A16916946003998BD /* CloseNormal.png */,
 				2589060C16916946003998BD /* CloseSelected.png */,
 				2589060E16916946003998BD /* Default.png */,
@@ -1519,6 +1528,10 @@
 				258908961691694B003998BD /* AppDelegate.cpp */,
 				258908981691694B003998BD /* HelloWorldScene.h */,
 				258908991691694B003998BD /* HelloWorldScene.cpp */,
+				258908AB16916E2A003998BD /* Dot.h */,
+				258908AC16916E37003998BD /* Dot.cpp */,
+				258908AE16916E67003998BD /* GameScene.h */,
+				258908AF16916E67003998BD /* GameScene.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1585,6 +1598,7 @@
 				2589061D16916946003998BD /* Icon@2x.png in Resources */,
 				2589061F16916946003998BD /* iTunesArtwork in Resources */,
 				258906B116916948003998BD /* ChangeLog in Resources */,
+				258908BA1691834B003998BD /* white_circle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1769,6 +1783,8 @@
 				2589088E1691694B003998BD /* HttpClient.cpp in Sources */,
 				258908971691694B003998BD /* AppDelegate.cpp in Sources */,
 				2589089A1691694B003998BD /* HelloWorldScene.cpp in Sources */,
+				258908AD16916E37003998BD /* Dot.cpp in Sources */,
+				258908B016916E67003998BD /* GameScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1900,6 +1916,7 @@
 				2589089F1691694B003998BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

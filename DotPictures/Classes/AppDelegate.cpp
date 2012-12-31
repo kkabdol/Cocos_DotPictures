@@ -9,7 +9,7 @@
 #include "AppDelegate.h"
 
 #include "cocos2d.h"
-#include "HelloWorldScene.h"
+#include "GameScene.h"
 
 USING_NS_CC;
 
@@ -35,12 +35,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    CCScene *pScene = HelloWorld::scene();
+    CCScene *pScene = GameScene::scene();
 
     // run
     pDirector->runWithScene(pScene);
-
-    return true;
+        return true;
 }
 
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
