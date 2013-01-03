@@ -39,6 +39,10 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // run
     pDirector->runWithScene(pScene);
+    
+    
+    srand(time(NULL));
+    
         return true;
 }
 

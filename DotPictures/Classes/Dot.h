@@ -23,11 +23,16 @@ public:
     unsigned int getCol();
     unsigned int getRow();
     unsigned int getSegment();
+    
+    bool isTouched(cocos2d::CCTouch* touch);
+    
+    
 private:
     
     unsigned int col;
     unsigned int row;
     unsigned int segment;
+    float radius;
 };
 
 #endif

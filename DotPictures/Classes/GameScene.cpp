@@ -8,6 +8,7 @@
 
 #include "GameScene.h"
 #include "Dot.h"
+#include "Picture.h"
 
 using namespace cocos2d;
 
@@ -33,42 +34,131 @@ bool GameScene::init()
     {
         return false;
     }
+    const CCSize size = CCDirector::sharedDirector()->getWinSize();
+
+    // batch node sprite
+    CCSpriteFrame* frame = CCSpriteFrame::create("white_circle.png", CCRect(0, 0, 640, 640));
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFrame(frame, "white_circle.png");
+    this->batchNode = CCSpriteBatchNode::create("white_circle.png");;
+    this->addChild(batchNode);
     
+    // score label;
+    this->scoreLabel = CCLabelTTF::create("Score : 0", "Thonburi", 34);
+    this->scoreLabel->setPosition( ccp(0, size.height) );
+    this->addChild(this->scoreLabel);
+    this->scoreLabel->setAnchorPoint(CCPoint(0.0f, 1.0f));
+
+    // button
+    CCMenuItemImage *pResetItem = CCMenuItemImage::create("CloseNormal.png",
+                                                          "CloseSelected.png",
+                                                          this,
+                                                          menu_selector(GameScene::resetCallback) );
     
+    pResetItem->setPosition( ccp(size.width - 20, 20) );
+    CCMenu* pMenu = CCMenu::create(pResetItem, NULL);
+    pMenu->setPosition( CCPointZero );
+    this->addChild(pMenu, 1);
     
     return true;
 }
 
 void GameScene::onEnter()
 {
-    this->initDots();
-
-
+    CCLayer::onEnter();
+    
     this->registerWithTouchDispatcher();
+    this->resetGame();
 }
 
-void GameScene::initDots()
+
+void GameScene::addOriginDot()
 {
-    this->addChild(Dot::dot(0, 0, 1));
+    batchNode->addChild(Dot::dot(0, 0, 1));
+}
+
+void GameScene::updateScoreLabel()
+{
+    // pop count
+    long long score = Picture::sharedPicture()->getScoreCanGet();
+    std::stringstream scoreSS;
+    scoreSS << "Score : " << score;
+    
+    this->scoreLabel->setString(scoreSS.str().c_str());
 }
 
 void GameScene::ccTouchesBegan(CCSet* touches, CCEvent* event)
 {
-    CCScene* scene = CCDirector::sharedDirector()->getRunningScene();
-    if (scene->getChildrenCount() > 0) {
-        CCArray* array = this->getChildren();
-        Dot* dot = dynamic_cast<Dot*>(array->objectAtIndex(0));
+    this->processTouchesOnDots(touches, event);
+}
+
+void GameScene::ccTouchesMoved(CCSet* touches, CCEvent* event)
+{
+    this->processTouchesOnDots(touches, event);
+}
+
+void GameScene::processTouchesOnDots(cocos2d::CCSet* touches, cocos2d::CCEvent* event)
+{
+    
+    std::vector<Dot*> dotsTouched;
+    
+    for(CCSetIterator it = touches->begin(); it != touches->end(); ++it) {
+        CCTouch* touch = static_cast<CCTouch*>(*it);
         
+     
+        CCArray* array = batchNode->getChildren();
+        for (unsigned int i=0; i<array->count(); ++i) {
+            Dot* dot = dynamic_cast<Dot*>(array->objectAtIndex(i));
+            
+            if (dot->isTouched(touch)) {
+                dotsTouched.push_back(dot);
+                
+            }
+        }
+    }
+    
+    
+    while (dotsTouched.size() > 0) {
+        Dot* dot = dotsTouched.back();
+        dotsTouched.pop_back();
+        
+        Picture::sharedPicture()->addPop(dot->getSegment());
+        
+        const CCPoint originalPos = dot->getPosition();
         unsigned int nextCol = dot->getCol()*2;
         unsigned int nextRow = dot->getRow()*2;
         unsigned int nextSeg = dot->getSegment()+1;
-        
-        this->addChild(Dot::dot(nextCol+0, nextRow+0, nextSeg));
-        this->addChild(Dot::dot(nextCol+1, nextRow+0, nextSeg));
-        this->addChild(Dot::dot(nextCol+0, nextRow+1, nextSeg));
-        this->addChild(Dot::dot(nextCol+1, nextRow+1, nextSeg));
-        
         dot->removeFromParentAndCleanup(true);
         
+        for (int j=0; j<2; ++j) {
+            for (int i=0; i<2; ++i) {
+                Dot* newDot = Dot::dot(nextCol+i, nextRow+j, nextSeg);
+                
+                const CCPoint nextPos = newDot->getPosition();
+                
+                newDot->setPosition(originalPos);
+                newDot->runAction( CCEaseIn::create(CCMoveTo::create(0.3f, nextPos), 2.0f) );
+
+                batchNode->addChild(newDot);
+            }
+        }
+        
+        
     }
+    
+    this->updateScoreLabel();
+    
+}
+
+void GameScene::resetGame()
+{
+    batchNode->removeAllChildrenWithCleanup(true);
+    Picture::sharedPicture()->init();
+    addOriginDot();
+    
+    this->updateScoreLabel();
+}
+
+void GameScene::resetCallback(CCObject* pSender)
+{
+    this->resetGame();
 }

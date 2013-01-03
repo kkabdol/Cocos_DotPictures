@@ -23,11 +23,24 @@ public:
     // preprocessor macro for "static create()" constructor ( node() deprecated )
     CREATE_FUNC(GameScene);
     
+    void resetCallback(CCObject* pSender);
+
+    
 private:
     virtual void onEnter();
     virtual void ccTouchesBegan(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
+    virtual void ccTouchesMoved(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
     
-    void initDots();
+    void processTouchesOnDots(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
+
+    void addOriginDot();
+    
+    void resetGame();
+    void updateScoreLabel();
+    
+    
+    cocos2d::CCLabelTTF* scoreLabel;
+    cocos2d::CCSpriteBatchNode* batchNode;
 };
 
 #endif

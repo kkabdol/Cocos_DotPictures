@@ -205,6 +205,14 @@
 		258908AD16916E37003998BD /* Dot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 258908AC16916E37003998BD /* Dot.cpp */; };
 		258908B016916E67003998BD /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 258908AF16916E67003998BD /* GameScene.cpp */; };
 		258908BA1691834B003998BD /* white_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 258908B91691834B003998BD /* white_circle.png */; };
+		25B70A50169406E100A436B2 /* realmario.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B70A4F169406E100A436B2 /* realmario.png */; };
+		25B70A531694070000A436B2 /* Picture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25B70A521694070000A436B2 /* Picture.cpp */; };
+		25B70A881694326C00A436B2 /* shaun.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B70A861694326C00A436B2 /* shaun.png */; };
+		25B70A891694326C00A436B2 /* stevejobs.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B70A871694326C00A436B2 /* stevejobs.png */; };
+		25B70A8B1694328400A436B2 /* Pictures.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25B70A8A1694328400A436B2 /* Pictures.plist */; };
+		25B70AAE16957C0B00A436B2 /* taji1.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B70AAB16957C0A00A436B2 /* taji1.png */; };
+		25B70AAF16957C0B00A436B2 /* taji2.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B70AAC16957C0B00A436B2 /* taji2.png */; };
+		25B70AB016957C0B00A436B2 /* taji3.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B70AAD16957C0B00A436B2 /* taji3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -642,6 +650,15 @@
 		258908AE16916E67003998BD /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
 		258908AF16916E67003998BD /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = Classes/GameScene.cpp; sourceTree = "<group>"; };
 		258908B91691834B003998BD /* white_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_circle.png; sourceTree = "<group>"; };
+		25B70A4F169406E100A436B2 /* realmario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = realmario.png; sourceTree = "<group>"; };
+		25B70A51169406F600A436B2 /* Picture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Picture.h; path = Classes/Picture.h; sourceTree = "<group>"; };
+		25B70A521694070000A436B2 /* Picture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Picture.cpp; path = Classes/Picture.cpp; sourceTree = "<group>"; };
+		25B70A861694326C00A436B2 /* shaun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shaun.png; sourceTree = "<group>"; };
+		25B70A871694326C00A436B2 /* stevejobs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stevejobs.png; sourceTree = "<group>"; };
+		25B70A8A1694328400A436B2 /* Pictures.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Pictures.plist; path = Resources/Pictures.plist; sourceTree = "<group>"; };
+		25B70AAB16957C0A00A436B2 /* taji1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taji1.png; sourceTree = "<group>"; };
+		25B70AAC16957C0B00A436B2 /* taji2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taji2.png; sourceTree = "<group>"; };
+		25B70AAD16957C0B00A436B2 /* taji3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taji3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -711,6 +728,12 @@
 		2589060916916946003998BD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				25B70AAB16957C0A00A436B2 /* taji1.png */,
+				25B70AAC16957C0B00A436B2 /* taji2.png */,
+				25B70AAD16957C0B00A436B2 /* taji3.png */,
+				25B70A861694326C00A436B2 /* shaun.png */,
+				25B70A871694326C00A436B2 /* stevejobs.png */,
+				25B70A4F169406E100A436B2 /* realmario.png */,
 				258908B91691834B003998BD /* white_circle.png */,
 				2589060A16916946003998BD /* CloseNormal.png */,
 				2589060C16916946003998BD /* CloseSelected.png */,
@@ -724,6 +747,7 @@
 				2589061C16916946003998BD /* Icon@2x.png */,
 				2589061E16916946003998BD /* iTunesArtwork */,
 				2589062016916946003998BD /* Info.plist */,
+				25B70A8A1694328400A436B2 /* Pictures.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1532,6 +1556,8 @@
 				258908AC16916E37003998BD /* Dot.cpp */,
 				258908AE16916E67003998BD /* GameScene.h */,
 				258908AF16916E67003998BD /* GameScene.cpp */,
+				25B70A51169406F600A436B2 /* Picture.h */,
+				25B70A521694070000A436B2 /* Picture.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1599,6 +1625,13 @@
 				2589061F16916946003998BD /* iTunesArtwork in Resources */,
 				258906B116916948003998BD /* ChangeLog in Resources */,
 				258908BA1691834B003998BD /* white_circle.png in Resources */,
+				25B70A50169406E100A436B2 /* realmario.png in Resources */,
+				25B70A881694326C00A436B2 /* shaun.png in Resources */,
+				25B70A891694326C00A436B2 /* stevejobs.png in Resources */,
+				25B70A8B1694328400A436B2 /* Pictures.plist in Resources */,
+				25B70AAE16957C0B00A436B2 /* taji1.png in Resources */,
+				25B70AAF16957C0B00A436B2 /* taji2.png in Resources */,
+				25B70AB016957C0B00A436B2 /* taji3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1785,6 +1818,7 @@
 				2589089A1691694B003998BD /* HelloWorldScene.cpp in Sources */,
 				258908AD16916E37003998BD /* Dot.cpp in Sources */,
 				258908B016916E67003998BD /* GameScene.cpp in Sources */,
+				25B70A531694070000A436B2 /* Picture.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

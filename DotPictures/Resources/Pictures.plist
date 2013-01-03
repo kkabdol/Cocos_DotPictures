@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>file</key>
+		<string>realmario.png</string>
+		<key>answer</key>
+		<string>mario</string>
+	</dict>
+	<dict>
+		<key>file</key>
+		<string>stevejobs.png</string>
+		<key>answer</key>
+		<string>Steve Jobs</string>
+	</dict>
+	<dict>
+		<key>file</key>
+		<string>shaun.png</string>
+		<key>answer</key>
+		<string>Shaun Choe</string>
+	</dict>
+	<dict>
+		<key>file</key>
+		<string>taji1.png</string>
+		<key>answer</key>
+		<string>Tajimahal</string>
+	</dict>
+	<dict>
+		<key>file</key>
+		<string>taji2.png</string>
+		<key>answer</key>
+		<string>Tajimahal</string>
+	</dict>
+	<dict>
+		<key>file</key>
+		<string>taji3.png</string>
+		<key>answer</key>
+		<string>Tajimahal</string>
+	</dict>
+</array>
+</plist>

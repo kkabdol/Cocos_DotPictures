@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Dot::isTouched(int, int, float):Dot.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Dot::isTouched(cocos2d::CCTouch*, float):Dot.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "cocos2d::CCTouch::getLocation() const:CCTouch.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Dot::init(unsigned int, unsigned int, unsigned int):Dot.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Dot::isTouched(int, int, int):Dot.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Picture::getPixelRColor(cocos2d::CCPoint const&amp;):Picture.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "cocos2d::CCNode::convertToNodeSpaceAR(cocos2d::CCPoint const&amp;):CCNode.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_tAnchorPointInPoints">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameScene::processTouchesOnDots(cocos2d::CCSet*, cocos2d::CCEvent*):GameScene.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "pos">
+            </PersistentString>
+            <PersistentString
+               value = "nextPos">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameScene::ccTouchesBegan(cocos2d::CCSet*, cocos2d::CCEvent*):GameScene.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "cocos2d::CCNode::boundingBox():CCNode.cpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
