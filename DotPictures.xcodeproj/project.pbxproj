@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		254A43DF1696CCD300F50040 /* white_circles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 254A43DD1696CCD300F50040 /* white_circles.plist */; };
+		254A43E21696CD9200F50040 /* white_circles.png in Resources */ = {isa = PBXBuildFile; fileRef = 254A43E11696CD9200F50040 /* white_circles.png */; };
 		258905F916916946003998BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258905F816916946003998BD /* QuartzCore.framework */; };
 		258905FB16916946003998BD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258905FA16916946003998BD /* OpenGLES.framework */; };
 		258905FD16916946003998BD /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258905FC16916946003998BD /* OpenAL.framework */; };
@@ -204,7 +206,6 @@
 		2589089A1691694B003998BD /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 258908991691694B003998BD /* HelloWorldScene.cpp */; };
 		258908AD16916E37003998BD /* Dot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 258908AC16916E37003998BD /* Dot.cpp */; };
 		258908B016916E67003998BD /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 258908AF16916E67003998BD /* GameScene.cpp */; };
-		258908BA1691834B003998BD /* white_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 258908B91691834B003998BD /* white_circle.png */; };
 		25B70A50169406E100A436B2 /* realmario.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B70A4F169406E100A436B2 /* realmario.png */; };
 		25B70A531694070000A436B2 /* Picture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25B70A521694070000A436B2 /* Picture.cpp */; };
 		25B70A881694326C00A436B2 /* shaun.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B70A861694326C00A436B2 /* shaun.png */; };
@@ -216,6 +217,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		254A43DD1696CCD300F50040 /* white_circles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = white_circles.plist; sourceTree = "<group>"; };
+		254A43E11696CD9200F50040 /* white_circles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_circles.png; sourceTree = "<group>"; };
 		258905F416916946003998BD /* DotPictures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotPictures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		258905F816916946003998BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		258905FA16916946003998BD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -649,7 +652,6 @@
 		258908AC16916E37003998BD /* Dot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Dot.cpp; path = Classes/Dot.cpp; sourceTree = "<group>"; };
 		258908AE16916E67003998BD /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
 		258908AF16916E67003998BD /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = Classes/GameScene.cpp; sourceTree = "<group>"; };
-		258908B91691834B003998BD /* white_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_circle.png; sourceTree = "<group>"; };
 		25B70A4F169406E100A436B2 /* realmario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = realmario.png; sourceTree = "<group>"; };
 		25B70A51169406F600A436B2 /* Picture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Picture.h; path = Classes/Picture.h; sourceTree = "<group>"; };
 		25B70A521694070000A436B2 /* Picture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Picture.cpp; path = Classes/Picture.cpp; sourceTree = "<group>"; };
@@ -728,13 +730,14 @@
 		2589060916916946003998BD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				254A43E11696CD9200F50040 /* white_circles.png */,
+				254A43DD1696CCD300F50040 /* white_circles.plist */,
 				25B70AAB16957C0A00A436B2 /* taji1.png */,
 				25B70AAC16957C0B00A436B2 /* taji2.png */,
 				25B70AAD16957C0B00A436B2 /* taji3.png */,
 				25B70A861694326C00A436B2 /* shaun.png */,
 				25B70A871694326C00A436B2 /* stevejobs.png */,
 				25B70A4F169406E100A436B2 /* realmario.png */,
-				258908B91691834B003998BD /* white_circle.png */,
 				2589060A16916946003998BD /* CloseNormal.png */,
 				2589060C16916946003998BD /* CloseSelected.png */,
 				2589060E16916946003998BD /* Default.png */,
@@ -1624,7 +1627,6 @@
 				2589061D16916946003998BD /* Icon@2x.png in Resources */,
 				2589061F16916946003998BD /* iTunesArtwork in Resources */,
 				258906B116916948003998BD /* ChangeLog in Resources */,
-				258908BA1691834B003998BD /* white_circle.png in Resources */,
 				25B70A50169406E100A436B2 /* realmario.png in Resources */,
 				25B70A881694326C00A436B2 /* shaun.png in Resources */,
 				25B70A891694326C00A436B2 /* stevejobs.png in Resources */,
@@ -1632,6 +1634,8 @@
 				25B70AAE16957C0B00A436B2 /* taji1.png in Resources */,
 				25B70AAF16957C0B00A436B2 /* taji2.png in Resources */,
 				25B70AB016957C0B00A436B2 /* taji3.png in Resources */,
+				254A43DF1696CCD300F50040 /* white_circles.plist in Resources */,
+				254A43E21696CD9200F50040 /* white_circles.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

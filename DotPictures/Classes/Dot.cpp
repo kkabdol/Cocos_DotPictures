@@ -29,8 +29,12 @@ Dot* Dot::dot(unsigned int col, unsigned int row, unsigned int segment)
 
 bool Dot::init(unsigned int col, unsigned int row, unsigned int segment)
 {
+    std::stringstream ss;
+    ss << "white_circle " << segment << ".png";
     
-    if ( !CCSprite::initWithSpriteFrameName("white_circle.png") ) {
+    std::cout << ss.str() << std::endl;
+    
+    if ( !CCSprite::initWithSpriteFrameName(ss.str().c_str()) ) {
         return false;
     }
     
@@ -38,16 +42,10 @@ bool Dot::init(unsigned int col, unsigned int row, unsigned int segment)
     this->row = row;
     this->segment = segment;
 
-    // set scale
-    const float scale = 1.0 / powf(2.0f, (float)(segment-1));
-    CCNode::setScale(scale);
-
-    
     // set position
-    const float originalRadius = this->getContentSize().height;
-    this->radius = originalRadius * scale;
-    float x = this->radius*col + this->radius/2 - originalRadius/2;
-    float y = -this->radius*row - this->radius/2 + originalRadius/2;
+    const float radius = this->boundingBox().size.width;
+    float x = radius*col + radius/2 - 640/2;
+    float y = -radius*row - radius/2 + 640/2;
 
     const CCSize size = CCDirector::sharedDirector()->getWinSize();
     CCNode::setPosition(x+size.width/2, y+size.height/2);
@@ -64,8 +62,8 @@ bool Dot::init(unsigned int col, unsigned int row, unsigned int segment)
     const int pHeight = picture->getHeight();
     
     unsigned int count = 0;
-    for (int sy = y-this->radius/2; sy<y+this->radius/2; ++sy) {
-        for (int sx = x-this->radius/2; sx<x+this->radius/2; ++sx) {
+    for (int sy = y-radius/2; sy<y+radius/2; ++sy) {
+        for (int sx = x-radius/2; sx<x+radius/2; ++sx) {
             const CCPoint point = CCPoint(sx+pWidth/2, -sy+pHeight/2);
             r += picture->getPixelRColor(point);
             g += picture->getPixelGColor(point);
@@ -105,7 +103,7 @@ bool Dot::isTouched(cocos2d::CCTouch* touch)
     const unsigned int maxSeg = Picture::sharedPicture()->getMaxSegment();
     
     CCPoint pos = touch->getLocation();
-    if ( this->getSegment() <= maxSeg && this->boundingBox().containsPoint(pos) ) {
+    if ( this->getSegment() < maxSeg && this->boundingBox().containsPoint(pos) ) {
         return true;
     } else {
         return false;

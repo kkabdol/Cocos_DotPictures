@@ -10,7 +10,7 @@
 
 using namespace cocos2d;
 
-const unsigned int kMaxSegment = 6;
+const unsigned int kMaxSegment = 7;
 
 static Picture s_sharedPicture;
 static bool s_bFirstRun = true;

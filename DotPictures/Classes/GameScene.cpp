@@ -37,9 +37,8 @@ bool GameScene::init()
     const CCSize size = CCDirector::sharedDirector()->getWinSize();
 
     // batch node sprite
-    CCSpriteFrame* frame = CCSpriteFrame::create("white_circle.png", CCRect(0, 0, 640, 640));
-    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFrame(frame, "white_circle.png");
-    this->batchNode = CCSpriteBatchNode::create("white_circle.png");;
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("white_circles.plist");
+    this->batchNode = CCSpriteBatchNode::create("white_circles.png");;
     this->addChild(batchNode);
     
     // score label;

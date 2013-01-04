@@ -32,7 +32,6 @@ private:
     unsigned int col;
     unsigned int row;
     unsigned int segment;
-    float radius;
 };
 
 #endif
