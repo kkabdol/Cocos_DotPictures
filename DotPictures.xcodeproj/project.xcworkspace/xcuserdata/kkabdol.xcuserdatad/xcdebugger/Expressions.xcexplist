@@ -3,30 +3,16 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Dot::isTouched(int, int, float):Dot.cpp">
-      </ContextState>
-      <ContextState
          contextName = "Dot::isTouched(cocos2d::CCTouch*, float):Dot.cpp">
       </ContextState>
       <ContextState
-         contextName = "cocos2d::CCTouch::getLocation() const:CCTouch.cpp">
+         contextName = "cocos2d::CCNode::boundingBox():CCNode.cpp">
       </ContextState>
       <ContextState
-         contextName = "Dot::init(unsigned int, unsigned int, unsigned int):Dot.cpp">
+         contextName = "QuadTree::quadTree(Dot*):QuadTree.cpp">
       </ContextState>
       <ContextState
-         contextName = "Dot::isTouched(int, int, int):Dot.cpp">
-      </ContextState>
-      <ContextState
-         contextName = "Picture::getPixelRColor(cocos2d::CCPoint const&amp;):Picture.cpp">
-      </ContextState>
-      <ContextState
-         contextName = "cocos2d::CCNode::convertToNodeSpaceAR(cocos2d::CCPoint const&amp;):CCNode.cpp">
-         <PersistentStrings>
-            <PersistentString
-               value = "m_tAnchorPointInPoints">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "QuadTree::init(Dot*):QuadTree.cpp">
       </ContextState>
       <ContextState
          contextName = "GameScene::processTouchesOnDots(cocos2d::CCSet*, cocos2d::CCEvent*):GameScene.cpp">
@@ -40,10 +26,61 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "QuadTree::getDotInPoint(int, int) const:QuadTree.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "GameScene::ccTouchesBegan(cocos2d::CCSet*, cocos2d::CCEvent*):GameScene.cpp">
       </ContextState>
       <ContextState
-         contextName = "cocos2d::CCNode::boundingBox():CCNode.cpp">
+         contextName = "Picture::getPixelRColor(cocos2d::CCPoint const&amp;):Picture.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "cocos2d::CCNode::convertToNodeSpaceAR(cocos2d::CCPoint const&amp;):CCNode.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_tAnchorPointInPoints">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "cocos2d::CCTouch::getLocation() const:CCTouch.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Dot::isTouched(int, int, int):Dot.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "GameScene::resetGame():GameScene.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Dot::isTouched(int, int, float):Dot.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "QuadTree::addDot(Dot*, Dot*, Dot*, Dot*, Dot*):QuadTree.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "QuadTree::setChildren(Dot*, Dot*, Dot*, Dot*):QuadTree.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Dot::init(unsigned int, unsigned int, unsigned int):Dot.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "row">
+            </PersistentString>
+            <PersistentString
+               value = "x+size.width/2">
+            </PersistentString>
+            <PersistentString
+               value = "y+size.height/2">
+            </PersistentString>
+            <PersistentString
+               value = "col">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -9,6 +9,7 @@
 #include "GameScene.h"
 #include "Dot.h"
 #include "Picture.h"
+#include "QuadTree.h"
 
 using namespace cocos2d;
 
@@ -58,7 +59,17 @@ bool GameScene::init()
     pMenu->setPosition( CCPointZero );
     this->addChild(pMenu, 1);
     
+    this->quadTree = NULL;
+    
     return true;
+}
+void GameScene::release() {
+    CCLayer::release();
+    
+    if (this->quadTree) {
+        delete this->quadTree;
+        this->quadTree = NULL;
+    }
 }
 
 void GameScene::onEnter()
@@ -70,9 +81,9 @@ void GameScene::onEnter()
 }
 
 
-void GameScene::addOriginDot()
+void GameScene::addOriginDot(Dot* dot)
 {
-    batchNode->addChild(Dot::dot(0, 0, 1));
+    batchNode->addChild(dot);
 }
 
 void GameScene::updateScoreLabel()
@@ -98,21 +109,28 @@ void GameScene::ccTouchesMoved(CCSet* touches, CCEvent* event)
 void GameScene::processTouchesOnDots(cocos2d::CCSet* touches, cocos2d::CCEvent* event)
 {
     
+    const CCSize size = CCDirector::sharedDirector()->getWinSize();
+    const CCPoint screenCenter = CCPointMake(size.width/2, size.height/2);
+    const unsigned int maxSeg = Picture::sharedPicture()->getMaxSegment();
+    
     std::vector<Dot*> dotsTouched;
     
     for(CCSetIterator it = touches->begin(); it != touches->end(); ++it) {
         CCTouch* touch = static_cast<CCTouch*>(*it);
-        
      
-        CCArray* array = batchNode->getChildren();
-        for (unsigned int i=0; i<array->count(); ++i) {
-            Dot* dot = dynamic_cast<Dot*>(array->objectAtIndex(i));
-            
-            if (dot->isTouched(touch)) {
-                dotsTouched.push_back(dot);
-                
-            }
+        CCPoint pos = touch->getLocation();
+        if (pos.x < screenCenter.x - Dot::cWidth/2 ||
+            pos.x >= screenCenter.x + Dot::cWidth/2 ||
+            pos.y < screenCenter.y - Dot::cHeight/2 ||
+            pos.y >= screenCenter.y + Dot::cHeight/2){
+            continue;
         }
+        
+        Dot* dot = this->quadTree->getDotInPoint(pos.x, pos.y);
+        if (dot->getSegment() < maxSeg &&
+            dot->numberOfRunningActions() <= 0) {
+            dotsTouched.push_back(dot);
+        }        
     }
     
     
@@ -126,7 +144,9 @@ void GameScene::processTouchesOnDots(cocos2d::CCSet* touches, cocos2d::CCEvent* 
         unsigned int nextCol = dot->getCol()*2;
         unsigned int nextRow = dot->getRow()*2;
         unsigned int nextSeg = dot->getSegment()+1;
-        dot->removeFromParentAndCleanup(true);
+        
+        int index = 0;
+        Dot* dots[4] = {NULL, };
         
         for (int j=0; j<2; ++j) {
             for (int i=0; i<2; ++i) {
@@ -138,9 +158,15 @@ void GameScene::processTouchesOnDots(cocos2d::CCSet* touches, cocos2d::CCEvent* 
                 newDot->runAction( CCEaseIn::create(CCMoveTo::create(0.3f, nextPos), 2.0f) );
 
                 batchNode->addChild(newDot);
+
+                dots[index] = newDot;
+                ++index;
             }
         }
         
+        
+        this->quadTree->addDot(dot, dots[0], dots[1], dots[2], dots[3]);
+        dot->removeFromParentAndCleanup(true);
         
     }
     
@@ -152,7 +178,14 @@ void GameScene::resetGame()
 {
     batchNode->removeAllChildrenWithCleanup(true);
     Picture::sharedPicture()->init();
-    addOriginDot();
+    
+    Dot* dot = Dot::dot(0, 0, 1);
+    addOriginDot(dot);
+    
+    if (this->quadTree) {
+        delete this->quadTree;
+    }
+    this->quadTree = new QuadTree(dot);
     
     this->updateScoreLabel();
 }

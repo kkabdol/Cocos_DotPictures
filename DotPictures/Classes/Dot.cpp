@@ -44,8 +44,8 @@ bool Dot::init(unsigned int col, unsigned int row, unsigned int segment)
 
     // set position
     const float radius = this->boundingBox().size.width;
-    float x = radius*col + radius/2 - 640/2;
-    float y = -radius*row - radius/2 + 640/2;
+    float x = radius*col + radius/2 - Dot::cWidth/2;
+    float y = -radius*row - radius/2 + Dot::cHeight/2;
 
     const CCSize size = CCDirector::sharedDirector()->getWinSize();
     CCNode::setPosition(x+size.width/2, y+size.height/2);

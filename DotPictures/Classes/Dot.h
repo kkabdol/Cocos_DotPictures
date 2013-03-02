@@ -20,6 +20,9 @@ public:
     // there's no 'id' in cpp, so we recommend to return the class instance pointer
     static Dot* dot(unsigned int col, unsigned int row, unsigned int segment);
     
+    static const int cWidth = 640;
+    static const int cHeight = 640;
+    
     unsigned int getCol();
     unsigned int getRow();
     unsigned int getSegment();

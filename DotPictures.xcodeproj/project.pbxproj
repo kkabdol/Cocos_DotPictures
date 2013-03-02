@@ -206,6 +206,7 @@
 		2589089A1691694B003998BD /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 258908991691694B003998BD /* HelloWorldScene.cpp */; };
 		258908AD16916E37003998BD /* Dot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 258908AC16916E37003998BD /* Dot.cpp */; };
 		258908B016916E67003998BD /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 258908AF16916E67003998BD /* GameScene.cpp */; };
+		259C381B16E1E510004178EC /* QuadTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 259C381A16E1E510004178EC /* QuadTree.cpp */; };
 		25B70A50169406E100A436B2 /* realmario.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B70A4F169406E100A436B2 /* realmario.png */; };
 		25B70A531694070000A436B2 /* Picture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25B70A521694070000A436B2 /* Picture.cpp */; };
 		25B70A881694326C00A436B2 /* shaun.png in Resources */ = {isa = PBXBuildFile; fileRef = 25B70A861694326C00A436B2 /* shaun.png */; };
@@ -652,6 +653,8 @@
 		258908AC16916E37003998BD /* Dot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Dot.cpp; path = Classes/Dot.cpp; sourceTree = "<group>"; };
 		258908AE16916E67003998BD /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
 		258908AF16916E67003998BD /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = Classes/GameScene.cpp; sourceTree = "<group>"; };
+		259C381716E1E4F1004178EC /* QuadTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QuadTree.h; path = Classes/QuadTree.h; sourceTree = "<group>"; };
+		259C381A16E1E510004178EC /* QuadTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QuadTree.cpp; path = Classes/QuadTree.cpp; sourceTree = "<group>"; };
 		25B70A4F169406E100A436B2 /* realmario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = realmario.png; sourceTree = "<group>"; };
 		25B70A51169406F600A436B2 /* Picture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Picture.h; path = Classes/Picture.h; sourceTree = "<group>"; };
 		25B70A521694070000A436B2 /* Picture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Picture.cpp; path = Classes/Picture.cpp; sourceTree = "<group>"; };
@@ -1561,6 +1564,8 @@
 				258908AF16916E67003998BD /* GameScene.cpp */,
 				25B70A51169406F600A436B2 /* Picture.h */,
 				25B70A521694070000A436B2 /* Picture.cpp */,
+				259C381716E1E4F1004178EC /* QuadTree.h */,
+				259C381A16E1E510004178EC /* QuadTree.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1823,6 +1828,7 @@
 				258908AD16916E37003998BD /* Dot.cpp in Sources */,
 				258908B016916E67003998BD /* GameScene.cpp in Sources */,
 				25B70A531694070000A436B2 /* Picture.cpp in Sources */,
+				259C381B16E1E510004178EC /* QuadTree.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

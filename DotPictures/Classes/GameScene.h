@@ -10,6 +10,8 @@
 #define DotPictures_GameScene_h
 
 #include "cocos2d.h"
+class QuadTree;
+class Dot;
 
 class GameScene : public cocos2d::CCLayer
 {
@@ -27,13 +29,14 @@ public:
 
     
 private:
+    virtual void release();
     virtual void onEnter();
     virtual void ccTouchesBegan(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
     virtual void ccTouchesMoved(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
     
     void processTouchesOnDots(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
 
-    void addOriginDot();
+    void addOriginDot(Dot* dot);
     
     void resetGame();
     void updateScoreLabel();
@@ -41,6 +44,7 @@ private:
     
     cocos2d::CCLabelTTF* scoreLabel;
     cocos2d::CCSpriteBatchNode* batchNode;
+    QuadTree* quadTree;
 };
 
 #endif
